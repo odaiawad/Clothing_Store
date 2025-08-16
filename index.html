@@ -1,127 +1,378 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عدي ستايل | متجر ملابس</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1521334884684-d80222895322?fit=crop&w=1200') no-repeat center center;
-      background-size: cover;
-      padding: 5rem 2rem;
-      color: #fff;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-    .product {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    .product h3 {
-      margin: 0.5rem 0 0;
-    }
-    .product p {
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-    @media(max-width: 600px) {
-      header, .hero, footer {
-        text-align: center;
-      }
-      nav {
-        width: 100%;
-        margin-top: 0.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>عدي ستايل</h1>
-    <nav>
-      <a href="#">الرئيسية</a>
-      <a href="#">منتجات</a>
-      <a href="#">اتصل بنا</a>
-    </nav>
-  </header>
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0ea5e9">
+    <title>اسم شركتك | التسويق والتصميم وتطوير المواقع</title>
+    <meta name="description" content="شركة متخصصة في التسويق الرقمي، الهوية البصرية، وتجربة المستخدم وتطوير مواقع ويب سريعة وحديثة تحقق نموًا حقيقيًا لعملك.">
+    <meta property="og:title" content="اسم شركتك | التسويق والتصميم وتطوير المواقع">
+    <meta property="og:description" content="شركة متخصصة في التسويق الرقمي، الهوية البصرية، وتجربة المستخدم وتطوير مواقع ويب سريعة وحديثة تحقق نموًا حقيقيًا لعملك.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230ea5e9'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='48' fill='white' font-family='Arial'%3Eس%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#hero" aria-label="الرئيسية">
+          <span class="brand-mark">س</span>
+          <span class="brand-name">اسم شركتك</span>
+        </a>
+        <nav class="nav" aria-label="التنقل الرئيسي">
+          <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+            <span class="sr-only">فتح/إغلاق القائمة</span>
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="menu" id="primary-menu">
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#work">الأعمال</a></li>
+            <li><a href="#process">آلية العمل</a></li>
+            <li><a href="#clients">العملاء</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#contact">تواصل</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary header-cta" href="#contact">احصل على عرض سعر</a>
+      </div>
+    </header>
 
-  <section class="hero">
-    <h2>أحدث صيحات الموضة</h2>
-    <p>ملابس عصرية بأسعار مناسبة</p>
-  </section>
+    <main>
+      <section class="hero" id="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>نحوّل أفكارك إلى علامة تجارية تنمو بسرعة</h1>
+            <p>
+              نُنشئ هويات بصرية وتجارب رقمية ومواقع ويب عالية الأداء مدعومة بالتسويق الذكي
+              لتجذب العملاء وتزيد المبيعات.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">ابدأ الآن</a>
+              <a href="#work" class="btn btn-ghost">شاهِد أعمالنا</a>
+            </div>
+            <div class="hero-trust">
+              <span>موثوق بنا من شركات ناشئة وروّاد أعمال</span>
+              <div class="logos">
+                <img alt="Logo" src="https://dummyimage.com/96x28/111827/ffffff.png&text=ACME">
+                <img alt="Logo" src="https://dummyimage.com/96x28/111827/ffffff.png&text=NOVA">
+                <img alt="Logo" src="https://dummyimage.com/96x28/111827/ffffff.png&text=ORBIT">
+                <img alt="Logo" src="https://dummyimage.com/96x28/111827/ffffff.png&text=PIXEL">
+              </div>
+            </div>
+          </div>
+          <div class="hero-media">
+            <div class="mockup-card">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop" alt="واجهة ويب حديثة">
+              <div class="mockup-badge">
+                <i class="fa-solid fa-bolt"></i>
+                سرعة وأداء ممتازان
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-bg" aria-hidden="true"></div>
+      </section>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f?fit=crop&w=600" alt="تيشيرت رجالي">
-      <h3>تيشيرت رجالي</h3>
-      <p>EGP 150</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?fit=crop&w=600" alt="فستان نسائي">
-      <h3>فستان نسائي</h3>
-      <p>EGP 350</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1598032894948-29506c6b08d7?fit=crop&w=600" alt="جاكيت شتوي">
-      <h3>جاكيت شتوي</h3>
-      <p>EGP 420</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1528701800489-20b2bd17e42c?fit=crop&w=600" alt="بنطال جينز">
-      <h3>بنطال جينز</h3>
-      <p>EGP 250</p>
-    </div>
-  </section>
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-head">
+            <h2>خدماتنا</h2>
+            <p>حلول متكاملة تُغطي رحلة العميل من الهوية وحتى النمو.</p>
+          </div>
+          <div class="cards-grid">
+            <article class="card">
+              <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+              <h3>التسويق الرقمي</h3>
+              <p>استراتيجيات مدفوعة بالبيانات: إدارة الحملات، تحسين محركات البحث، تسويق المحتوى، والإعلانات.</p>
+              <ul class="card-list">
+                <li>إعلانات بحث وشبكات اجتماعية</li>
+                <li>SEO تقني ومحتوى</li>
+                <li>تحليلات ولوحات متابعة</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+              <h3>التصميم والهوية</h3>
+              <p>هويات بصرية متسقة وتجارب مستخدم سلسة عبر كل نقاط الاتصال.</p>
+              <ul class="card-list">
+                <li>شعار ونظام بصري</li>
+                <li>تصميم UI/UX</li>
+                <li>أدلة استخدام العلامة</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+              <h3>تطوير مواقع الويب</h3>
+              <p>مواقع سريعة وآمنة ومتجاوبة تُحسّن التحويل وتكبر مع عملك.</p>
+              <ul class="card-list">
+                <li>مواقع تسويقية وصفحات هبوط</li>
+                <li>تكاملات وتحسين الأداء</li>
+                <li>استضافة ونشر مستمر</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    &copy; 2025 عدي ستايل. جميع الحقوق محفوظة.
-  </footer>
-</body>
+      <section class="section section-alt" id="work">
+        <div class="container">
+          <div class="section-head">
+            <h2>أعمال مختارة</h2>
+            <p>نماذج من مشاريع ساعدت عملاءنا على النمو.</p>
+          </div>
+          <div class="work-grid">
+            <a class="work-item" href="#" aria-label="مشروع 1">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="مشروع 1">
+              <div class="work-meta">
+                <span class="tag">موقع تسويقي</span>
+                <h3>حملة إطلاق منتج</h3>
+              </div>
+            </a>
+            <a class="work-item" href="#" aria-label="مشروع 2">
+              <img src="https://images.unsplash.com/photo-1529336953121-ad5a0d43d0d2?q=80&w=1200&auto=format&fit=crop" alt="مشروع 2">
+              <div class="work-meta">
+                <span class="tag">هوية بصرية</span>
+                <h3>تجديد العلامة لعلامة ناشئة</h3>
+              </div>
+            </a>
+            <a class="work-item" href="#" aria-label="مشروع 3">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" alt="مشروع 3">
+              <div class="work-meta">
+                <span class="tag">واجهة مستخدم</span>
+                <h3>منصة SaaS بواجهة عصرية</h3>
+              </div>
+            </a>
+            <a class="work-item" href="#" aria-label="مشروع 4">
+              <img src="https://images.unsplash.com/photo-1551281044-8b89ac69684a?q=80&w=1200&auto=format&fit=crop" alt="مشروع 4">
+              <div class="work-meta">
+                <span class="tag">صفحة هبوط</span>
+                <h3>زيادة التحويل 35%</h3>
+              </div>
+            </a>
+            <a class="work-item" href="#" aria-label="مشروع 5">
+              <img src="https://images.unsplash.com/photo-1520975624749-5c8e8a1be3d5?q=80&w=1200&auto=format&fit=crop" alt="مشروع 5">
+              <div class="work-meta">
+                <span class="tag">تصميم محتوى</span>
+                <h3>حملة شبكات اجتماعية</h3>
+              </div>
+            </a>
+            <a class="work-item" href="#" aria-label="مشروع 6">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="مشروع 6">
+              <div class="work-meta">
+                <span class="tag">تطوير</span>
+                <h3>موقع شركة تقنية</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="container">
+          <div class="section-head">
+            <h2>كيف نعمل</h2>
+            <p>عملية واضحة تجعل التنفيذ سريعًا والنتائج قابلة للقياس.</p>
+          </div>
+          <ol class="steps">
+            <li class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h3>اكتشاف وتحليل</h3>
+                <p>جلسة لفهم أهدافك والجمهور والمنافسين وخريطة الطريق.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h3>الاستراتيجية</h3>
+                <p>صياغة استراتيجية تسويق وتجربة مستخدم وهوية متكاملة.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h3>التصميم والتجربة</h3>
+                <p>نماذج أولية وتغذية راجعة سريعة للوصول لأفضل تجربة.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h3>التطوير والإطلاق</h3>
+                <p>تطوير موقع سريع وآمن مع قياس الأداء والتحويل.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h3>النمو والتحسين</h3>
+                <p>تحليلات مستمرة وتجارب A/B لتحسين النتائج.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="clients">
+        <div class="container">
+          <div class="section-head">
+            <h2>ماذا يقول عملاؤنا</h2>
+            <p>قصص نجاح حقيقية من شركاء وثقوا بنا.</p>
+          </div>
+          <div class="testimonials">
+            <figure class="testimonial">
+              <blockquote>"زيادة 3x في العملاء المحتملين خلال 60 يومًا فقط. الفريق محترف وسريع الاستجابة."</blockquote>
+              <figcaption>
+                <img src="https://i.pravatar.cc/64?img=12" alt="عميل">
+                <div>
+                  <strong>أحمد السلمي</strong>
+                  <span>مدير تسويق - Orbit</span>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>"هوية بصرية متقنة وموقع أسرع من 95% من المواقع في الاختبارات."</blockquote>
+              <figcaption>
+                <img src="https://i.pravatar.cc/64?img=32" alt="عميلة">
+                <div>
+                  <strong>نورة العتيبي</strong>
+                  <span>مؤسسة - Pixel Studio</span>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>"تواصل واضح وأفكار عملية ساعدتنا على مضاعفة التحويل."</blockquote>
+              <figcaption>
+                <img src="https://i.pravatar.cc/64?img=5" alt="عميل">
+                <div>
+                  <strong>خالد المطيري</strong>
+                  <span>شريك مؤسس - Nova Labs</span>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about">
+          <div class="about-text">
+            <h2>عن الشركة</h2>
+            <p>
+              نحن فريق متعدد التخصصات يجمع بين الاستراتيجية، التصميم، والتطوير لنقدّم حلولًا
+              تركّز على النتائج. نعمل بشفافية وسرعة ونقيس كل شيء.
+            </p>
+            <ul class="badges">
+              <li><i class="fa-solid fa-gauge-high"></i> مواقع سريعة ومحسّنة</li>
+              <li><i class="fa-solid fa-shield"></i> معايير أمان حديثة</li>
+              <li><i class="fa-solid fa-handshake"></i> شراكة طويلة الأمد</li>
+            </ul>
+          </div>
+          <div class="about-media">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop" alt="فريق يعمل">
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-band">
+        <div class="container cta-inner">
+          <h2>جاهز للانطلاق؟ لنبنِ معًا حضورك الرقمي</h2>
+          <a href="#contact" class="btn btn-invert">ابدأ مشروعك</a>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head">
+            <h2>تواصل معنا</h2>
+            <p>أخبرنا باحتياجك لنرسل لك عرضًا مناسبًا خلال 24 ساعة.</p>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">الاسم الكامل</label>
+                <input type="text" id="name" name="name" placeholder="اكتب اسمك" required>
+              </div>
+              <div class="form-field">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="phone">رقم الجوال</label>
+                <input type="tel" id="phone" name="phone" placeholder="05xxxxxxxx">
+              </div>
+              <div class="form-field">
+                <label for="budget">الميزانية المتوقعة</label>
+                <select id="budget" name="budget">
+                  <option value="">اختر...</option>
+                  <option value="under10">أقل من 10,000</option>
+                  <option value="10-25">10,000 - 25,000</option>
+                  <option value="25-50">25,000 - 50,000</option>
+                  <option value="50+">أكثر من 50,000</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message">نبذة عن المشروع</label>
+              <textarea id="message" name="message" rows="5" placeholder="صف مشروعك وأهدافك والجمهور المستهدف" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+              <span class="form-note">بالضغط على إرسال فإنك توافق على سياسة الخصوصية.</span>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#hero">
+            <span class="brand-mark">س</span>
+            <span class="brand-name">اسم شركتك</span>
+          </a>
+          <p class="footer-text">نبني حضورك الرقمي ونُطلق علامتك للنمو.</p>
+          <div class="socials">
+            <a aria-label="تويتر" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a aria-label="لينكدإن" href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a aria-label="انستغرام" href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a aria-label="واتساب" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>روابط</h4>
+          <ul class="footer-links">
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#work">الأعمال</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#contact">تواصل</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>تواصل</h4>
+          <ul class="footer-links">
+            <li>البريد: hello@example.com</li>
+            <li>الهاتف: 0555555555</li>
+            <li>الموقع: الرياض، السعودية</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <small>© <span id="year"></span> اسم شركتك - جميع الحقوق محفوظة</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>
