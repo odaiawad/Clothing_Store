@@ -1,127 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عدي ستايل | متجر ملابس</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1521334884684-d80222895322?fit=crop&w=1200') no-repeat center center;
-      background-size: cover;
-      padding: 5rem 2rem;
-      color: #fff;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-    .product {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    .product h3 {
-      margin: 0.5rem 0 0;
-    }
-    .product p {
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-    @media(max-width: 600px) {
-      header, .hero, footer {
-        text-align: center;
-      }
-      nav {
-        width: 100%;
-        margin-top: 0.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الإبداع للتسويق والتصميم | Creative Marketing & Design</title>
+    <meta name="description" content="شركة متخصصة في التسويق الرقمي، تصميم المواقع، والهوية البصرية">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>عدي ستايل</h1>
-    <nav>
-      <a href="#">الرئيسية</a>
-      <a href="#">منتجات</a>
-      <a href="#">اتصل بنا</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>الإبداع</h2>
+                <span>Creative</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">خدماتنا</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">أعمالنا</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">من نحن</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">تواصل معنا</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero">
-    <h2>أحدث صيحات الموضة</h2>
-    <p>ملابس عصرية بأسعار مناسبة</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">نحول أفكارك إلى <span class="highlight">واقع رقمي</span></h1>
+                <p class="hero-description">
+                    شركة متخصصة في التسويق الرقمي، تصميم المواقع الإلكترونية، والهوية البصرية. 
+                    نساعدك في بناء حضور قوي على الإنترنت وتحقيق أهدافك التجارية.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">ابدأ مشروعك</a>
+                    <a href="#portfolio" class="btn btn-secondary">شاهد أعمالنا</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <div class="floating-element element-1">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="floating-element element-2">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="floating-element element-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="floating-element element-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f?fit=crop&w=600" alt="تيشيرت رجالي">
-      <h3>تيشيرت رجالي</h3>
-      <p>EGP 150</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?fit=crop&w=600" alt="فستان نسائي">
-      <h3>فستان نسائي</h3>
-      <p>EGP 350</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1598032894948-29506c6b08d7?fit=crop&w=600" alt="جاكيت شتوي">
-      <h3>جاكيت شتوي</h3>
-      <p>EGP 420</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1528701800489-20b2bd17e42c?fit=crop&w=600" alt="بنطال جينز">
-      <h3>بنطال جينز</h3>
-      <p>EGP 250</p>
-    </div>
-  </section>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدماتنا</h2>
+                <p class="section-subtitle">نقدم حلول شاملة لتطوير حضورك الرقمي</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>تطوير المواقع</h3>
+                    <p>تصميم وتطوير مواقع ويب حديثة ومتجاوبة مع جميع الأجهزة باستخدام أحدث التقنيات</p>
+                    <ul>
+                        <li>مواقع الشركات</li>
+                        <li>المتاجر الإلكترونية</li>
+                        <li>المدونات والمنصات</li>
+                        <li>التطبيقات التفاعلية</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>التسويق الرقمي</h3>
+                    <p>استراتيجيات تسويقية مبتكرة لزيادة الوعي بعلامتك التجارية وتحقيق المبيعات</p>
+                    <ul>
+                        <li>إدارة وسائل التواصل</li>
+                        <li>الإعلانات المدفوعة</li>
+                        <li>تحسين محركات البحث</li>
+                        <li>التسويق بالمحتوى</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>التصميم الجرافيكي</h3>
+                    <p>تصاميم إبداعية تعكس هوية علامتك التجارية وتترك انطباعاً مميزاً لدى العملاء</p>
+                    <ul>
+                        <li>تصميم الهوية البصرية</li>
+                        <li>المواد التسويقية</li>
+                        <li>تصميم واجهات المستخدم</li>
+                        <li>الرسوم التوضيحية</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>التطبيقات المحمولة</h3>
+                    <p>تطوير تطبيقات محمولة مبتكرة لنظامي iOS و Android بتجربة مستخدم استثنائية</p>
+                    <ul>
+                        <li>تطبيقات الأعمال</li>
+                        <li>التطبيقات التجارية</li>
+                        <li>تطبيقات الخدمات</li>
+                        <li>الألعاب البسيطة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 عدي ستايل. جميع الحقوق محفوظة.
-  </footer>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أعمالنا</h2>
+                <p class="section-subtitle">مشاريع نفخر بإنجازها لعملائنا</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="websites">مواقع ويب</button>
+                <button class="filter-btn" data-filter="branding">هوية بصرية</button>
+                <button class="filter-btn" data-filter="marketing">تسويق</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="websites">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-globe"></i>
+                            <h4>موقع شركة تقنية</h4>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>موقع شركة للحلول التقنية</h3>
+                        <p>تصميم وتطوير موقع حديث لشركة تقنية متخصصة في الحلول الذكية</p>
+                        <div class="portfolio-tags">
+                            <span>تطوير ويب</span>
+                            <span>تصميم UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-palette"></i>
+                            <h4>هوية بصرية</h4>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>هوية بصرية لمطعم</h3>
+                        <p>تصميم هوية بصرية شاملة لسلسلة مطاعم تقدم الأطعمة التراثية</p>
+                        <div class="portfolio-tags">
+                            <span>شعار</span>
+                            <span>هوية بصرية</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>حملة تسويقية</h4>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>حملة تسويقية متكاملة</h3>
+                        <p>إدارة حملة تسويقية رقمية شاملة لإطلاق منتج جديد</p>
+                        <div class="portfolio-tags">
+                            <span>تسويق رقمي</span>
+                            <span>إعلانات</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="websites">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h4>متجر إلكتروني</h4>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>متجر إلكتروني للأزياء</h3>
+                        <p>تطوير منصة تجارة إلكترونية متكاملة مع نظام إدارة المخزون</p>
+                        <div class="portfolio-tags">
+                            <span>تجارة إلكترونية</span>
+                            <span>نظام دفع</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">من نحن</h2>
+                    <p class="about-description">
+                        نحن فريق من المبدعين والمطورين المتخصصين في مجال التسويق الرقمي والتصميم. 
+                        نؤمن بأن كل مشروع له قصة فريدة يجب أن تُحكى بطريقة مميزة.
+                    </p>
+                    <p class="about-description">
+                        منذ تأسيسنا، نجحنا في مساعدة عشرات الشركات والمؤسسات في بناء حضور قوي على الإنترنت 
+                        وتحقيق أهدافها التجارية من خلال حلول إبداعية ومبتكرة.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>مشروع مكتمل</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>30+</h3>
+                            <p>عميل راضي</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5+</h3>
+                            <p>سنوات خبرة</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>دعم فني</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-graphic">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                        <div class="team-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p class="section-subtitle">هل لديك مشروع في ذهنك؟ دعنا نحوله إلى واقع</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>الرياض، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>+966 50 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@creative-agency.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف">
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">اختر الخدمة المطلوبة</option>
+                            <option value="website">تطوير موقع ويب</option>
+                            <option value="marketing">التسويق الرقمي</option>
+                            <option value="design">التصميم الجرافيكي</option>
+                            <option value="mobile">تطبيق محمول</option>
+                            <option value="consultation">استشارة</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="تفاصيل المشروع" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>الإبداع</h3>
+                        <p>نحول أفكارك إلى واقع رقمي</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li><a href="#services">تطوير المواقع</a></li>
+                        <li><a href="#services">التسويق الرقمي</a></li>
+                        <li><a href="#services">التصميم الجرافيكي</a></li>
+                        <li><a href="#services">التطبيقات المحمولة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#portfolio">أعمالنا</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 شركة الإبداع للتسويق والتصميم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
