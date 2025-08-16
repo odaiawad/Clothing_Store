@@ -1,127 +1,761 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عدي ستايل | متجر ملابس</title>
+  <title>ديجيتال كرييتف | شركة التسويق والتصميم الرقمية</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    /* Header Styles */
     header {
-      background: #222;
-      color: #fff;
-      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #ffd700;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ffd700;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
       flex-wrap: wrap;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 1rem;
+
+    .btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
       text-decoration: none;
-      font-weight: bold;
+      display: inline-block;
     }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1521334884684-d80222895322?fit=crop&w=1200') no-repeat center center;
-      background-size: cover;
+
+    .btn-primary {
+      background: #ffd700;
+      color: #333;
+    }
+
+    .btn-primary:hover {
+      background: #ffed4e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Services Section */
+    .services {
       padding: 5rem 2rem;
-      color: #fff;
-      text-align: center;
+      background: white;
     }
-    .hero h2 {
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
       font-size: 2.5rem;
+      color: #333;
       margin-bottom: 1rem;
     }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
+
+    .section-title p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
     }
-    .product {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #f0f0f0;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about {
+      padding: 5rem 2rem;
+      background: #f8f9fa;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .about-text p {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-image {
       text-align: center;
     }
-    .product img {
+
+    .about-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      padding: 5rem 2rem;
+      background: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05);
+    }
+
+    .portfolio-item img {
       width: 100%;
       height: 250px;
       object-fit: cover;
     }
-    .product h3 {
-      margin: 0.5rem 0 0;
+
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 2rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
     }
-    .product p {
-      color: #555;
-      margin-bottom: 1rem;
+
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
     }
+
+    /* Contact Section */
+    .contact {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-info h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      color: #ffd700;
+    }
+
+    .contact-form {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
     footer {
       background: #222;
-      color: #fff;
+      color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
     }
-    @media(max-width: 600px) {
-      header, .hero, footer {
+
+    .social-links {
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #ffd700;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #667eea;
+        flex-direction: column;
+        padding: 1rem;
         text-align: center;
       }
-      nav {
-        width: 100%;
-        margin-top: 0.5rem;
+
+      nav.active ul {
+        display: flex;
       }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .about-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      .services,
+      .about,
+      .portfolio,
+      .contact {
+        padding: 3rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>عدي ستايل</h1>
-    <nav>
-      <a href="#">الرئيسية</a>
-      <a href="#">منتجات</a>
-      <a href="#">اتصل بنا</a>
-    </nav>
+    <div class="header-container">
+      <a href="#" class="logo">ديجيتال <span>كرييتف</span></a>
+      <nav>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#portfolio">أعمالنا</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>أحدث صيحات الموضة</h2>
-    <p>ملابس عصرية بأسعار مناسبة</p>
-  </section>
-
-  <section class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716f?fit=crop&w=600" alt="تيشيرت رجالي">
-      <h3>تيشيرت رجالي</h3>
-      <p>EGP 150</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?fit=crop&w=600" alt="فستان نسائي">
-      <h3>فستان نسائي</h3>
-      <p>EGP 350</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1598032894948-29506c6b08d7?fit=crop&w=600" alt="جاكيت شتوي">
-      <h3>جاكيت شتوي</h3>
-      <p>EGP 420</p>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1528701800489-20b2bd17e42c?fit=crop&w=600" alt="بنطال جينز">
-      <h3>بنطال جينز</h3>
-      <p>EGP 250</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content fade-in-up">
+      <h1>نحول أفكارك إلى واقع رقمي</h1>
+      <p>نحن شركة متخصصة في التسويق الرقمي والتصميم وإنشاء المواقع الإلكترونية. نساعد الشركات على النمو والتطور في العالم الرقمي.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary">ابدأ مشروعك</a>
+        <a href="#portfolio" class="btn btn-secondary">شاهد أعمالنا</a>
+      </div>
     </div>
   </section>
 
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>خدماتنا المميزة</h2>
+        <p>نقدم مجموعة شاملة من الخدمات الرقمية لمساعدة شركتك على النمو والنجاح</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>تصميم المواقع الإلكترونية</h3>
+          <p>نصمم مواقع إلكترونية حديثة ومتجاوبة تعكس هوية علامتك التجارية وتوفر تجربة مستخدم ممتازة</p>
+        </div>
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>التسويق الرقمي</h3>
+          <p>استراتيجيات تسويقية متقدمة تشمل إدارة وسائل التواصل الاجتماعي والإعلانات المدفوعة وتحسين محركات البحث</p>
+        </div>
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>تصميم الهوية البصرية</h3>
+          <p>تصميم شعارات وهوية بصرية احترافية تعزز من مكانة علامتك التجارية في السوق</p>
+        </div>
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>تطبيقات الموبايل</h3>
+          <p>تطوير تطبيقات موبايل عالية الجودة تعمل على جميع الأجهزة والأنظمة</p>
+        </div>
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>تحليل البيانات</h3>
+          <p>تحليل شامل لبيانات عملك لتطوير استراتيجيات فعالة وتحسين الأداء</p>
+        </div>
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>الدعم الفني</h3>
+          <p>دعم فني متواصل لضمان عمل جميع خدماتك بسلاسة وكفاءة عالية</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h3>من نحن</h3>
+          <p>نحن فريق من المحترفين المبدعين الذين يمتلكون خبرة واسعة في مجال التكنولوجيا والتصميم والتسويق الرقمي.</p>
+          <p>نؤمن بقوة التكنولوجيا في تحويل الأعمال ونسعى دائماً لتقديم حلول مبتكرة ومبتكرة لعملائنا.</p>
+          <p>نعمل مع الشركات من جميع الأحجام لمساعدتها على تحقيق أهدافها الرقمية والنمو في السوق التنافسي.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=600" alt="فريق العمل">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>أعمالنا المميزة</h2>
+        <p>شاهد مجموعة من مشاريعنا الناجحة التي نفخر بها</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item fade-in-up">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?fit=crop&w=600" alt="موقع تجاري">
+          <div class="portfolio-overlay">
+            <h3>موقع تجاري متكامل</h3>
+            <p>تصميم وتطوير موقع تجاري حديث مع نظام إدارة محتوى متقدم</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in-up">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?fit=crop&w=600" alt="تطبيق موبايل">
+          <div class="portfolio-overlay">
+            <h3>تطبيق موبايل</h3>
+            <p>تطوير تطبيق موبايل متقدم لخدمة العملاء</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in-up">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?fit=crop&w=600" alt="هوية بصرية">
+          <div class="portfolio-overlay">
+            <h3>هوية بصرية متكاملة</h3>
+            <p>تصميم هوية بصرية احترافية لشركة ناشئة</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in-up">
+          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?fit=crop&w=600" alt="حملة تسويقية">
+          <div class="portfolio-overlay">
+            <h3>حملة تسويقية رقمية</h3>
+            <p>إدارة حملة تسويقية رقمية ناجحة لعلامة تجارية</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>تواصل معنا</h3>
+          <p>نحن هنا لمساعدتك في تحقيق أهدافك الرقمية. لا تتردد في التواصل معنا!</p>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+20 123 456 789</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@digitalcreative.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>القاهرة، مصر</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <span>الأحد - الخميس: 9:00 ص - 6:00 م</span>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="الاسم الكامل" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="البريد الإلكتروني" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="رقم الهاتف">
+            </div>
+            <div class="form-group">
+              <textarea placeholder="رسالتك" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2025 عدي ستايل. جميع الحقوق محفوظة.
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2025 ديجيتال كرييتف. جميع الحقوق محفوظة.</p>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const nav = document.querySelector('nav');
+
+    mobileMenu.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+        // Close mobile menu if open
+        nav.classList.remove('active');
+      });
+    });
+
+    // Form submission
+    const contactForm = document.querySelector('.contact-form form');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+      this.reset();
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in-up elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(el);
+    });
+
+    // Header background on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(102, 126, 234, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+      } else {
+        header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        header.style.backdropFilter = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
